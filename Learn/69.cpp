@@ -18,8 +18,7 @@ void print(vector<int> nums) {
     cout << " ]";
 }
 
-int main()
-{
+int main() {
     cout << "We want to creat a list of Number's\n";
     cout << "Firts, What is the size of the list, how many of Number's you want in the list: "; cin >> numsSize;
     vector<int> nums(numsSize);
@@ -40,7 +39,7 @@ int main()
     {
     case 1:
         int c;
-        cout << "What do you Want to do?\n [1]- Remove the Last Number\n [2]- Add a Number\n >> "; cin >> c;
+        cout << "What do you Want to do?\n [1]- Remove the Last Number\n [2]- Add a Number\n [3]- Clear the List and Rewrite it\n >> "; cin >> c;
         if (c == 1) {
             nums.pop_back();
             print(nums);
@@ -49,6 +48,16 @@ int main()
             int number;
             cout << "Enter Number " << (nums.size() + 1) << " in the List: "; cin >> number;
             nums.push_back(number);
+            print(nums);
+        }
+        else if (c == 3) {
+            nums.clear();
+            cout << "Firts, What is the size of the list, how many of Number's you want in the list: "; cin >> numsSize;
+            vector<int> nums(numsSize);
+            for (int i = 0; i < numsSize; i++) {
+                cout << "Enter Number " << i + 1 << " in the list: "; cin >> nums.at(i);
+                cout << endl;
+            }
             print(nums);
         }
         else
