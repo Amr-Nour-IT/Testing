@@ -19,11 +19,11 @@ void print(vector<int> nums) {
 }
 
 int main() {
-    cout << "We want to creat a list of Number's\n";
-    cout << "Firts, What is the size of the list, how many of Number's you want in the list: "; cin >> numsSize;
+    cout << "We want to create a list of Numbers\n";
+    cout << "First, What is the size of the list, how many Numbers do you want in the list: "; cin >> numsSize;
     vector<int> nums(numsSize);
     if (nums.size() == 1) {
-        cout << "just one Number in the List?! :(,  OK.!\n";
+        cout << "Just one Number in the List?! :(, OK.!\n";
     }
     for (int i = 0; i < numsSize; i++) {
         cout << "Enter Number " << i + 1 << " in the list: "; cin >> nums.at(i);
@@ -33,13 +33,13 @@ int main() {
     cout << "=============================================\n";
     print(nums);
     cout << "\n=============================================\n";
-    cout << "Do you Want to Edit The List?\n [1]- Yes\n [2]- No\n >> "; cin >> YOrN;
+    cout << "Do you want to edit the list?\n [1]- Yes\n [2]- No\n >> "; cin >> YOrN;
 
     switch (YOrN)
     {
     case 1:
         int c;
-        cout << "What do you Want to do?\n [1]- Remove the Last Number\n [2]- Add a Number\n [3]- Clear the List and Rewrite it\n >> "; cin >> c;
+        cout << "What do you want to do?\n [1]- Remove the Last Number\n [2]- Add a Number\n [3]- Clear the List and Rewrite it\n >> "; cin >> c;
         if (c == 1) {
             nums.pop_back();
             print(nums);
@@ -52,8 +52,8 @@ int main() {
         }
         else if (c == 3) {
             nums.clear();
-            cout << "Firts, What is the size of the list, how many of Number's you want in the list: "; cin >> numsSize;
-            vector<int> nums(numsSize);
+            cout << "First, What is the size of the list, how many Numbers do you want in the list: "; cin >> numsSize;
+            nums.resize(numsSize);  // إعادة تهيئة القائمة بحجم جديد
             for (int i = 0; i < numsSize; i++) {
                 cout << "Enter Number " << i + 1 << " in the list: "; cin >> nums.at(i);
                 cout << endl;
@@ -63,13 +63,12 @@ int main() {
         else
             cout << "Invalid..!\a";
         break;
-     case 2:
-         cout << "Ok, Bye..";
-         break;
+    case 2:
+        cout << "Ok, Bye..";
+        break;
 
-     default:
-         cout << "Invalid..!\a\nTry again:\n";
-         
+    default:
+        cout << "Invalid..!\a\nTry again:\n";
         break;
     }
 
