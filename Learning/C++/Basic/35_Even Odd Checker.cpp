@@ -1,9 +1,15 @@
 // Even Odd Checker
-int num;
-
 #include <iostream>
 using namespace std;
 
+int num;
+
+string EvenOrOdd(int num) {
+	 if (num % 2 == 0)
+	 	return "Even";
+	else
+     	return "Odd";
+}
 
 int main() {
 
@@ -11,11 +17,11 @@ int main() {
     cout << "|=== Even Odd Checker ===|\n";
     cout << "==========================\n\n";
     cout << "     Enter the Numer\n      >> "; cin >> num;
+cout << "The Number is ";
 
-    if (num % 2 == 0)
-     cout << "Your Number is Even" << "\n==========================\n";
-    else
-    cout << "Your Number is Odd" << "\n==========================\n";
+cout << EvenOrOdd(num);
+    
+    cout << "\n==========================\n";
 
     return 0;
 }
